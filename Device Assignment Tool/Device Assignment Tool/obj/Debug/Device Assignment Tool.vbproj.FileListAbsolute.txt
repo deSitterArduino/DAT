@@ -1,0 +1,23 @@
+C:\Users\GMAN\Documents\SharpDevelop Projects\Device Assignment Tool\Device Assignment Tool\obj\Debug\Device Assignment Tool.vbprojResolveAssemblyReference.cache
+C:\Users\GMAN\Documents\SharpDevelop Projects\Device Assignment Tool\Device Assignment Tool\obj\Debug\Device_Assignment_Tool.MainForm.resources
+C:\Users\GMAN\Documents\SharpDevelop Projects\Device Assignment Tool\Device Assignment Tool\obj\Debug\Device Assignment Tool.vbproj.GenerateResource.Cache
+C:\Users\GMAN\Documents\SharpDevelop Projects\Device Assignment Tool\Device Assignment Tool\bin\Debug\Device Assignment Tool.exe
+C:\Users\GMAN\Documents\SharpDevelop Projects\Device Assignment Tool\Device Assignment Tool\bin\Debug\Device Assignment Tool.pdb
+C:\Users\GMAN\Documents\SharpDevelop Projects\Device Assignment Tool\Device Assignment Tool\obj\Debug\Device Assignment Tool.exe
+C:\Users\GMAN\Documents\SharpDevelop Projects\Device Assignment Tool\Device Assignment Tool\obj\Debug\Device Assignment Tool.pdb
+C:\Users\GMAN\Documents\SharpDevelop Projects\Device Assignment Tool\Device Assignment Tool\obj\Debug\Device_Assignment_Tool.Icons.resources
+C:\Users\GMAN\Documents\SharpDevelop Projects\Device Assignment Tool\Device Assignment Tool\obj\Debug\Device_Assignment_Tool.ReturnMessageCRT.resources
+C:\Users\GMAN\Documents\SharpDevelop Projects\Device Assignment Tool\Device Assignment Tool\obj\Debug\Device_Assignment_Tool.SplashScreen.resources
+C:\Users\GMAN\Documents\SharpDevelop Projects\Device Assignment Tool\Device Assignment Tool\obj\Debug\Device_Assignment_Tool.ReturnMessageCAM.resources
+D:\Device Assignment Tool\Device Assignment Tool\bin\Debug\Device Assignment Tool.exe
+D:\Device Assignment Tool\Device Assignment Tool\bin\Debug\Device Assignment Tool.pdb
+D:\Device Assignment Tool\Device Assignment Tool\obj\Debug\Device Assignment Tool.vbprojResolveAssemblyReference.cache
+D:\Device Assignment Tool\Device Assignment Tool\obj\Debug\Device_Assignment_Tool.MainForm.resources
+D:\Device Assignment Tool\Device Assignment Tool\obj\Debug\Device_Assignment_Tool.Icons.resources
+D:\Device Assignment Tool\Device Assignment Tool\obj\Debug\Device_Assignment_Tool.ReturnMessageCAM.resources
+D:\Device Assignment Tool\Device Assignment Tool\obj\Debug\Device_Assignment_Tool.ReturnMessageCRT.resources
+D:\Device Assignment Tool\Device Assignment Tool\obj\Debug\Device_Assignment_Tool.SplashScreen.resources
+D:\Device Assignment Tool\Device Assignment Tool\obj\Debug\Device Assignment Tool.vbproj.GenerateResource.Cache
+D:\Device Assignment Tool\Device Assignment Tool\obj\Debug\Device Assignment Tool.exe
+D:\Device Assignment Tool\Device Assignment Tool\obj\Debug\Device Assignment Tool.pdb
+C:\Users\GMAN\Documents\SharpDevelop Projects\Device Assignment Tool\Device Assignment Tool\obj\Debug\Device_Assignment_Tool.History.resources
