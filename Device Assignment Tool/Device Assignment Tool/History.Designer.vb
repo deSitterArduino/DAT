@@ -33,8 +33,8 @@ Partial Class History
 	''' not be able to load this method if it was changed manually.
 	''' </summary>
 	Private Sub InitializeComponent()
-		Dim dataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim dataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim dataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim dataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Me.textSearch = New System.Windows.Forms.TextBox()
 		Me.dgv = New System.Windows.Forms.DataGridView()
 		Me.comboTable = New System.Windows.Forms.ComboBox()
@@ -63,24 +63,24 @@ Partial Class History
 		Me.dgv.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
 						Or System.Windows.Forms.AnchorStyles.Left)  _
 						Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
-		dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-		dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Info
-		dataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-		dataGridViewCellStyle5.Padding = New System.Windows.Forms.Padding(18, 0, 0, 0)
-		dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-		dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-		dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-		Me.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5
+		dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+		dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Info
+		dataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+		dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+		dataGridViewCellStyle1.Padding = New System.Windows.Forms.Padding(18, 0, 0, 0)
+		dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+		dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+		dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+		Me.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1
 		Me.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-		dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-		dataGridViewCellStyle6.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-		dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-		dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-		dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-		Me.dgv.DefaultCellStyle = dataGridViewCellStyle6
+		dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+		dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+		dataGridViewCellStyle2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+		dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+		dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+		dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+		dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+		Me.dgv.DefaultCellStyle = dataGridViewCellStyle2
 		Me.dgv.Location = New System.Drawing.Point(13, 44)
 		Me.dgv.Name = "dgv"
 		Me.dgv.ReadOnly = true
@@ -133,7 +133,6 @@ Partial Class History
 		Me.Controls.Add(Me.textSearch)
 		Me.Name = "History"
 		Me.Text = "Assignment History"
-		AddHandler Load, AddressOf Me.HistoryLoad
 		CType(Me.dgv,System.ComponentModel.ISupportInitialize).EndInit
 		Me.ResumeLayout(false)
 		Me.PerformLayout

@@ -33,10 +33,10 @@ Partial Class MainForm
 	''' not be able to load this method if it was changed manually.
 	''' </summary>
 	Private Sub InitializeComponent()
-		Dim dataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim dataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim dataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-		Dim dataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim dataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim dataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim dataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+		Dim dataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
 		Me.panelNelson = New System.Windows.Forms.Panel()
 		Me.buttonHistory = New System.Windows.Forms.Button()
 		Me.labelTitle = New System.Windows.Forms.Label()
@@ -109,7 +109,7 @@ Partial Class MainForm
 		Me.labelTitle.Name = "labelTitle"
 		Me.labelTitle.Size = New System.Drawing.Size(250, 30)
 		Me.labelTitle.TabIndex = 1001
-		Me.labelTitle.Text = "Device Assignment Tool"
+		Me.labelTitle.Text = "Device Assignment App"
 		Me.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'pictureNelson
@@ -148,7 +148,7 @@ Partial Class MainForm
 		Me.crtLable.Name = "crtLable"
 		Me.crtLable.Size = New System.Drawing.Size(144, 23)
 		Me.crtLable.TabIndex = 1003
-		Me.crtLable.Text = "CRT Assignments"
+		Me.crtLable.Text = "CRT"
 		Me.crtLable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'camPanel
@@ -168,7 +168,7 @@ Partial Class MainForm
 		Me.camLable.Name = "camLable"
 		Me.camLable.Size = New System.Drawing.Size(170, 23)
 		Me.camLable.TabIndex = 1005
-		Me.camLable.Text = "Camera Assignments"
+		Me.camLable.Text = "Camera"
 		Me.camLable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
 		'
 		'camPicture
@@ -249,6 +249,7 @@ Partial Class MainForm
 		Me.crtButtonPrint.TabIndex = 6
 		Me.crtButtonPrint.Text = "Print"
 		Me.crtButtonPrint.UseVisualStyleBackColor = true
+		AddHandler Me.crtButtonPrint.Click, AddressOf Me.CrtButtonPrintClick
 		'
 		'crtDGV
 		'
@@ -256,23 +257,23 @@ Partial Class MainForm
 		Me.crtDGV.AllowUserToDeleteRows = false
 		Me.crtDGV.AllowUserToResizeColumns = false
 		Me.crtDGV.AllowUserToResizeRows = false
-		dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-		dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Info
-		dataGridViewCellStyle1.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-		dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-		dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-		dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-		Me.crtDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1
+		dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+		dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Info
+		dataGridViewCellStyle21.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+		dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText
+		dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight
+		dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+		dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+		Me.crtDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21
 		Me.crtDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-		dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent
-		dataGridViewCellStyle2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-		dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-		dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-		dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-		Me.crtDGV.DefaultCellStyle = dataGridViewCellStyle2
+		dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+		dataGridViewCellStyle22.BackColor = System.Drawing.Color.Transparent
+		dataGridViewCellStyle22.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+		dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText
+		dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight
+		dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+		dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+		Me.crtDGV.DefaultCellStyle = dataGridViewCellStyle22
 		Me.crtDGV.Location = New System.Drawing.Point(7, 175)
 		Me.crtDGV.MultiSelect = false
 		Me.crtDGV.Name = "crtDGV"
@@ -361,23 +362,23 @@ Partial Class MainForm
 		Me.camDGV.AllowUserToDeleteRows = false
 		Me.camDGV.AllowUserToResizeColumns = false
 		Me.camDGV.AllowUserToResizeRows = false
-		dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-		dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Info
-		dataGridViewCellStyle3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-		dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-		dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-		dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-		Me.camDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3
+		dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+		dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Info
+		dataGridViewCellStyle23.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+		dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText
+		dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight
+		dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+		dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+		Me.camDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23
 		Me.camDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-		dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-		dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-		dataGridViewCellStyle4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-		dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-		dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-		dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-		dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-		Me.camDGV.DefaultCellStyle = dataGridViewCellStyle4
+		dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+		dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window
+		dataGridViewCellStyle24.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+		dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText
+		dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
+		dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+		dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+		Me.camDGV.DefaultCellStyle = dataGridViewCellStyle24
 		Me.camDGV.Location = New System.Drawing.Point(7, 452)
 		Me.camDGV.MultiSelect = false
 		Me.camDGV.Name = "camDGV"

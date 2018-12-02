@@ -158,7 +158,7 @@
 	''' <summary>
 	''' 
 	''' </summary>
-	Public Sub crtUpdate(ByRef textBox1 As TextBox, ByRef textBox2 As TextBox, ByRef button As Button, ByRef txtPassword As TextBox, ByRef dbControl As DatabaseControl)
+	Public Sub crtUpdate(ByRef textBox1 As TextBox, ByRef textBox2 As TextBox, ByRef button As Button, ByRef txtPassword As TextBox, ByRef buttonPrint As Button, ByRef dbControl As DatabaseControl)
 		If _crtCombo.SelectedIndex > -1 Then
 			Dim rowIndex As Integer = GetDgvRowIndex(selectionEnum.CRT, _crtCombo.SelectedIndex)
 			If rowIndex > -1 Then
@@ -173,16 +173,18 @@
 				If isColoured(selectionEnum.CRT, rowIndex) = False Then
 					dbControl.crtPassword(txtPassword, _crtCombo.SelectedValue.ToString)
 					txtPassword.BackColor = SystemColors.Control
+					buttonPrint.Enabled = True
 				Else
 					txtPassword.Text = "OVERDUE"
 					txtPassword.BackColor = Color.LightCoral
+					buttonPrint.Enabled = False
 				End If
 			Else
 				'Non-Allocated Selection
-				crtClear(textBox1, textBox2, button, txtPassword)
+				crtClear(textBox1, textBox2, button, txtPassword, buttonPrint)
 			End If
 		Else
-			crtClear(textBox1, textBox2, button, txtPassword, True)
+			crtClear(textBox1, textBox2, button, txtPassword, buttonPrint, True)
 		End If
 		If _crtNewRow > -1 Then
 			_crtDGV.DefaultCellStyle.SelectionBackColor = Color.LightGreen
@@ -200,7 +202,7 @@
 	''' <summary>
 	''' 
 	''' </summary>
-	Private Sub crtClear(ByRef textBox1 As TextBox, ByRef textBox2 As TextBox, ByRef button As Button, ByRef txtPassword As TextBox, Optional fullClear As Boolean = False)
+	Private Sub crtClear(ByRef textBox1 As TextBox, ByRef textBox2 As TextBox, ByRef button As Button, ByRef txtPassword As TextBox, ByRef buttonPrint As Button, Optional fullClear As Boolean = False)
 		If fullClear = True Then
 			textBox1.Enabled = False
 			textBox2.Enabled = False
@@ -210,12 +212,12 @@
 		End If
 		textBox1.Clear()
 		textBox2.Clear()
-		'_parent.textPassword.Clear()
 		button.Text = "Allocate"
 		button.ForeColor = SystemColors.ControlText
 		button.Enabled = False
 		txtPassword.Clear()
 		txtPassword.BackColor = SystemColors.Control
+		buttonPrint.Enabled = False
 	End Sub
 	
 	Public Sub camUpdate(ByRef textBox1 As TextBox, ByRef dtp As DateTimePicker, ByRef button As Button, ByRef DTPChanged As Boolean)

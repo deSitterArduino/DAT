@@ -12,7 +12,8 @@
 	End Sub
 	
 	Sub SplashScreenLoad(sender As Object, e As EventArgs)
-		
+		Dim resourceManager As New System.Resources.ResourceManager("Device_Assignment_Tool.Icons",  System.Reflection.Assembly.GetExecutingAssembly)
+		pictureBox1.Image = resourceManager.GetObject("NelsonLogo")
 	End Sub
 	
 	Private Sub timer2Tick(sender As Object, e As EventArgs)
@@ -24,7 +25,7 @@
 	Private Sub timer1Tick(sender As Object, e As EventArgs)
 		_timer1.Stop()
 		If _sql.checkConnection() = True Then
-			label1.Text = "SQL Server is live."
+			label1.Text = "Server is live."
 			_timer2 = New Timer With{.Interval = 1000}
 			AddHandler _timer2.Tick, AddressOf timer2Tick
 			_timer2.Start()			

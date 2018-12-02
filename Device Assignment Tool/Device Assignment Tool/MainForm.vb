@@ -68,7 +68,7 @@ Public Partial Class MainForm
 				AddHandler crtDGV.SelectionChanged, AddressOf crtSelectionChanged
 			End If
 		End If
-		interfaceControl.crtUpdate(crtText1, crtText2, crtButton, crtTextPassword, databaseControl)
+		interfaceControl.crtUpdate(crtText1, crtText2, crtButton, crtTextPassword, crtButtonPrint, databaseControl)
 	End Sub
 	
 	Sub camSelectionChanged(sender As Object, e As EventArgs)
@@ -97,7 +97,7 @@ Public Partial Class MainForm
 			databaseControl.crtSetDgvSource(crtDGV, interfaceControl) 'refresh the dgv source
 			interfaceControl.SetSelectDgv(selectionEnum.CRT) 'set selection to new entry in the dgv
 			interfaceControl.NewRow(selectionEnum.CRT) 'specify that the selection is a new row for colouring purposes
-			interfaceControl.crtUpdate(crtText1, crtText2, crtButton, crtTextPassword, databaseControl) 'update fields to reflect the new selection
+			interfaceControl.crtUpdate(crtText1, crtText2, crtButton, crtTextPassword, crtButtonPrint, databaseControl) 'update fields to reflect the new selection
 			AddHandler crtDGV.SelectionChanged, AddressOf crtSelectionChanged
 			crtCombo.Select()
 		Else
@@ -110,7 +110,7 @@ Public Partial Class MainForm
 				databaseControl.crtSetDgvSource(crtDGV, interfaceControl) 'refresh the dgv source
 				interfaceControl.RemoveSelect(selectionEnum.CRT) 'remove and combo or dgv selection
 				AddHandler crtDGV.SelectionChanged, AddressOf crtSelectionChanged
-				interfaceControl.crtUpdate(crtText1, crtText2, crtButton, crtTextPassword, databaseControl) 'update fields to reflect selection state
+				interfaceControl.crtUpdate(crtText1, crtText2, crtButton, crtTextPassword, crtButtonPrint, databaseControl) 'update fields to reflect selection state
 				crtCombo.Select()
 			End If
 		End If
@@ -158,6 +158,52 @@ Public Partial Class MainForm
 	''' <summary>
 	''' 
 	''' </summary>
+	Sub CrtButtonPrintClick(sender As Object, e As EventArgs)
+		Try
+			Dim printDialog As PrintDialog = New PrintDialog()
+			Dim printDocument As System.Drawing.Printing.PrintDocument = New System.Drawing.Printing.PrintDocument()
+			Dim margins As System.Drawing.Printing.Margins = New System.Drawing.Printing.Margins(20, 20, 0, 0)
+			printDocument.DefaultPageSettings.Margins = margins
+			printDialog.Document = printDocument
+			AddHandler printDocument.PrintPage, AddressOf printDocument_PrintPage
+			Dim result As DialogResult = printDialog.ShowDialog()
+			If result = DialogResult.OK Then
+				printDocument.Print()
+			End If
+		Catch ex As Exception
+			MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+		End Try
+	End Sub
+	
+	Private Sub printDocument_PrintPage(sender As Object, e As System.Drawing.Printing.PrintPageEventArgs)
+		Dim graphic As Graphics = e.Graphics
+		Dim font As Font = New Font("Calibri", 36)
+		Dim brush As SolidBrush = New SolidBrush(Color.Black)
+		Dim offset As Integer = 0
+		Dim sf As StringFormat = New StringFormat()
+		sf.Alignment = StringAlignment.Center
+		
+		graphic.DrawString(crtCombo.Text, font, brush, e.MarginBounds, sf)
+		offset = offset + font.Height
+		font = New Font("Calibri", 16)
+		Dim rec As Rectangle = New Rectangle(e.MarginBounds.Left, e.MarginBounds.Top + offset, e.MarginBounds.Right, e.MarginBounds.Bottom - offset)
+		graphic.DrawString("Password: " & crtTextPassword.Text, font, brush, rec, sf)
+		offset = offset + font.Height + 25
+		font = New Font("Calibri", 12)
+		rec = New Rectangle(e.MarginBounds.Left, e.MarginBounds.Top + offset, e.MarginBounds.Right, e.MarginBounds.Bottom - offset)
+		graphic.DrawString("Allocated to: " & crtText1.Text, font, brush, rec, sf)
+		graphic.DrawRectangle(New Pen(Color.Black), New Rectangle(e.MarginBounds.Left, e.MarginBounds.Top + offset - 15, e.MarginBounds.Right, 75))
+		offset = offset + font.Height + 5
+		rec = New Rectangle(e.MarginBounds.Left, e.MarginBounds.Top + offset, e.MarginBounds.Right, e.MarginBounds.Bottom - offset)
+		Dim dt As DateTime = New DateTime()
+		If crtDGV.SelectedRows.Count > 0 Then dt = CType(crtDGV.CurrentRow.Cells(3).Value, DateTime)
+		graphic.DrawString("Valid for: " & dt.Date.ToString("dd-MM-yy"), font, brush, rec, sf)
+
+	End Sub
+	
+	''' <summary>
+	''' 
+	''' </summary>
 	Sub crtTextChanged(sender As Object, e As EventArgs)
 		If Me.ActiveControl.Equals(sender) Then
 			If crtText1.Text <> Nothing Then
@@ -187,7 +233,7 @@ Public Partial Class MainForm
 	Sub crtFieldKeyPressed(sender As Object, e As KeyEventArgs) 'let's let escape work from the dgv and comboBox too. TODO
 		If e.KeyCode = Keys.Escape Then
 			crtCombo.SelectedIndex = -1
-			interfaceControl.crtUpdate(crtText1, crtText2, crtButton, crtTextPassword, databaseControl)
+			interfaceControl.crtUpdate(crtText1, crtText2, crtButton, crtTextPassword, crtButtonPrint, databaseControl)
 			crtCombo.Select()
 			e.SuppressKeyPress = True
 		Else

@@ -16,10 +16,6 @@ Public Partial Class History
 		setDoubleBuffered(dgv, True)
 	End Sub
 	
-	Sub HistoryLoad(sender As Object, e As EventArgs)
-		
-	End Sub
-	
 	Sub comboTableSelectionChanged(sender As Object, e As EventArgs)
 		comboColumn.Items.Clear()
 		textSearch.Clear()
@@ -47,7 +43,7 @@ Public Partial Class History
 	End Sub
 	
 	Sub textSearchClick()
-		textSearch.Clear()
+		'textSearch.Clear()
 	End Sub
 	
 	Sub textSearchKeyPressed(sender As Object, e As KeyEventArgs)
