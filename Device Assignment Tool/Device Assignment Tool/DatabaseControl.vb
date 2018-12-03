@@ -22,11 +22,11 @@
 	''' FROM [Disco].[dbo].[Devices] AS A
 	''' INNER JOIN [Disco].[dbo].[DeviceProfiles] AS B
 	''' ON A.DeviceProfileId = B.Id
-	''' WHERE B.ShortName = 'CRT' AND A.DecommissionedDate IS NULL
+	''' WHERE B.Name = 'CRT Laptops' AND A.DecommissionedDate IS NULL
 	''' ORDER BY A.AssetNumber
 	''' </q1>
 	Public Sub crtSetComboSource(ByRef combo As ComboBox)
-		sql.execQuery("SELECT AssetNumber, SUBSTRING(AssignedUserId, CHARINDEX('\', AssignedUserId) + 1, LEN(AssignedUserId)) AS AssignedUserId FROM [Disco].[dbo].[Devices] as A INNER JOIN [Disco].[dbo].[DeviceProfiles] as B ON A.DeviceProfileId = B.Id WHERE B.ShortName = 'CRT' AND A.DecommissionedDate IS NULL ORDER BY A.AssetNumber;")
+		sql.execQuery("SELECT AssetNumber, SUBSTRING(AssignedUserId, CHARINDEX('\', AssignedUserId) + 1, LEN(AssignedUserId)) AS AssignedUserId FROM [Disco].[dbo].[Devices] as A INNER JOIN [Disco].[dbo].[DeviceProfiles] as B ON A.DeviceProfileId = B.Id WHERE B.Name = 'CRT Laptops' AND A.DecommissionedDate IS NULL ORDER BY A.AssetNumber;")
 		If sql.hasException() Or sql._recordCount < 1 Then
 			sql.reportError("Database Error: Unable to load CRT profile.", "02")
 			Application.Exit() 'if we can't set the combo source then there is little point going on. Something would have to be wrong with the database/connection.
@@ -147,11 +147,11 @@
 	''' FROM [Disco].[dbo].[Devices] AS A
 	''' INNER JOIN [Disco].[dbo].[DeviceProfiles] AS B
 	''' ON A.DeviceProfileId = B.Id
-	''' WHERE B.ShortName = 'DC' AND A.DecommissionedDate IS NULL
+	''' WHERE B.Name = 'Digital Camera' AND A.DecommissionedDate IS NULL
 	''' ORDER BY AssetNumber
 	''' </q1>
 	Public Sub camSetComboSource(ByRef combo As ComboBox)
-		sql.execQuery("SELECT AssetNumber FROM [Disco].[dbo].[Devices] as A INNER JOIN [Disco].[dbo].[DeviceProfiles] as B ON A.DeviceProfileId = B.Id WHERE B.ShortName = 'DC' AND A.DecommissionedDate IS NULL ORDER BY AssetNumber;")
+		sql.execQuery("SELECT AssetNumber FROM [Disco].[dbo].[Devices] as A INNER JOIN [Disco].[dbo].[DeviceProfiles] as B ON A.DeviceProfileId = B.Id WHERE B.Name = 'Digital Camera' AND A.DecommissionedDate IS NULL ORDER BY AssetNumber;")
 		If sql.hasException() Or sql._recordCount < 1 Then
 			sql.reportError("Database Error: Unable to load CAM profile.", "07")
 			Application.Exit() 'if we can't set the combo source then there is little point going on. Something would have to be wrong with the database/connection.
